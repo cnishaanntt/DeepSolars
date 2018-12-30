@@ -30,7 +30,7 @@ for index in range(1, 66):
         pos_num += 1
         test_set_list.append((img_path, [1], index, i, region_type))
 
-with open('test_set_list.pickle', 'w') as f:
+with open('test_set_list.pickle', 'wb') as f:
     pickle.dump(test_set_list, f)
 
 print ('Test set list done. # positive samples: '+str(pos_num)+' # negative samples: '+str(neg_num))
