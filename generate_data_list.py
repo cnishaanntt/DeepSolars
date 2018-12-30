@@ -10,12 +10,12 @@ test_set_list = []
 pos_num = 0
 neg_num = 0
 eval_set_meta = pd.read_csv(os.path.join(TEST_SET_DIR, 'eval_set_meta.csv')).values
-for index in xrange(1, 66):
+for index in range(1, 66):
     region_type = eval_set_meta[index-1, 5] # get the type of the regions
     region_dir = os.path.join(TEST_SET_DIR, str(index))
 
     # negative samples
-    for i in xrange(1, 3001):
+    for i in range(1, 3001):
         img_path = os.path.join(region_dir, '0', str(i) + '.png')
         if not os.path.exists(img_path):
             continue
@@ -23,7 +23,7 @@ for index in xrange(1, 66):
         test_set_list.append((img_path, [0], index, i, region_type))
 
     # positive samples
-    for i in xrange(1, 3001):
+    for i in range(1, 3001):
         img_path = os.path.join(region_dir, '1', str(i) + '.png')
         if not os.path.exists(img_path):
             continue
